@@ -3,6 +3,7 @@ package org.example.evaluations.evaluation.controllers;
 import org.example.evaluations.evaluation.dtos.SecretDto;
 import org.example.evaluations.evaluation.services.IKeyVault;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class GoogleController {
 
     @Autowired
+    @Qualifier("googleKeyVault")
     private IKeyVault keyVault;
 
     @PostMapping
